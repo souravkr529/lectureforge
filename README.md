@@ -16,7 +16,6 @@ LectureForge combines LLM script writing, OpenAI TTS, Manim code generation, ren
 
 ![LectureForge Demo](demo/lectureforge-demo.gif)
 
-- Sample output: [demo/lectureforge-demo.mp4](demo/lectureforge-demo.mp4)
 - Prompt used: `Explain my students regarding Tokenizer in LLM`
 
 ## Why It Looks Better Than Typical AI Video Demos
