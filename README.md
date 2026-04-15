@@ -1,17 +1,21 @@
-# Lecture Forge by Sourav
+<div align="center">
+  <h1>🧠 LectureForge: AI-Powered Explainer Video Generator</h1>
+  <p><strong>Turn any text prompt into a narrated, animated educational video using LLMs and Manim.</strong></p>
+  <p>
+    <a href="https://github.com/souravkr529/lectureforge/stargazers"><img src="https://img.shields.io/github/stars/souravkr529/lectureforge" alt="Stars Badge"/></a>
+    <a href="https://github.com/souravkr529/lectureforge/network/members"><img src="https://img.shields.io/github/forks/souravkr529/lectureforge" alt="Forks Badge"/></a>
+    <a href="https://github.com/souravkr529/lectureforge/issues"><img src="https://img.shields.io/github/issues/souravkr529/lectureforge" alt="Issues Badge"/></a>
+    <a href="https://github.com/souravkr529/lectureforge/blob/main/LICENSE"><img src="https://img.shields.io/github/license/souravkr529/lectureforge" alt="License Badge"/></a>
+  </p>
+</div>
 
-This project is designed to generate videos using animations, text-to-speech, and other features.
+## 📖 About LectureForge
 
-## GitHub Repository
+LectureForge is an advanced open-source **AI Video Generator** tailored for educators, developers, and content creators. It seamlessly combines **LLM scriptwriting (OpenAI/Claude)**, **Text-To-Speech (TTS)**, mathematical animations via **Manim**, and a self-healing compiler pipeline to automatically create stunning, polished explainer videos from a single text prompt.
 
-[GitHub Repository Link](https://github.com/souravkr529/lectureforge)
+Whether you want to explain *Quantum Computing*, *LLM Tokenizers*, or *Advanced Calculus*, LectureForge structures the topic into logical scenes, generates Python code for high-quality visual animations, syncs it flawlessly with human-like AI voiceovers, and stitches everything into a final MP4.
 
-# LectureForge
-
-Turn any topic into a narrated, animated explainer video.
-
-LectureForge combines LLM script writing, OpenAI TTS, Manim code generation, render-time auto-repair, and ffmpeg assembly to turn a plain prompt into a polished lesson video.
-
+If you are looking for an open-source alternative to AI video creation platforms specifically tuned for education, STEM, and diagramming—LectureForge is built for you!
 ## Demo
 
 ![LectureForge Demo](demo/lectureforge-demo.gif)
@@ -104,3 +108,10 @@ demo/
 ## License
 
 MIT
+
+---
+
+## 🔍 Keywords & Tags
+`#AIVideoGenerator` `#TextToVideo` `#Manim` `#Python` `#OpenAI` `#Claude` `#GenerativeAI` `#EdTech` `#Automation` `#TextToAnimation` `#AutoVideo` `#LLM` `#VideoProcessing`
+
+*Built for GitHub discoverability: AI video generator, text to video open source, topic to video AI, manim animation automation, Python video creation, explainer video generator, educational AI tools, script to video, automated teaching slides, ai generated presentation.*
