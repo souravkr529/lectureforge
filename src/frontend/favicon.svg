@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="LectureForge">
+  <rect width="64" height="64" rx="16" fill="#101828"/>
+  <path d="M18 16h10v22h18v10H18z" fill="#4f46e5"/>
+  <path d="M30 16h18v10H40v8h8v10H30z" fill="#f59e0b"/>
+</svg>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LectureForge | AI Lesson Video Generator</title>
+    <meta name="description" content="Turn any topic into a narrated, animated explainer video with AI scripts, TTS, and Manim rendering.">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-gradient"></div>
+
+    <header class="header">
+        <div class="container">
+            <div class="logo" aria-label="LectureForge">
+                <div class="logo-mark" aria-hidden="true">LF</div>
+                <div class="logo-copy">
+                    <span class="logo-name">LectureForge</span>
+                    <span class="logo-tag">AI lesson videos from a single topic</span>
+                </div>
+                <span class="logo-badge">BETA</span>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Turn Any Topic Into
+                    <span class="gradient-text">Animated Lesson Videos</span>
+                </h1>
+                <p class="hero-subtitle">
+                    LectureForge writes the script, generates the narration, builds the Manim scenes,
+                    auto-repairs broken renders, and ships a polished explainer video in minutes.
+                </p>
+
+                <div class="generator-card">
+                    <form id="video-form" class="video-form">
+                        <div class="form-group">
+                            <label for="topic-input" class="form-label">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                                    <path d="M2 17l10 5 10-5M2 12l10 5 10-5" />
+                                </svg>
+                                Enter Your Topic
+                            </label>
+                            <input type="text" id="topic-input" class="topic-input"
+                                placeholder="e.g., How does machine learning work?" required />
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="llm-select" class="form-label">LLM Provider</label>
+                                <select id="llm-select" class="form-select">
+                                    <option value="auto">Auto (Claude -> OpenAI)</option>
+                                    <option value="claude">Claude</option>
+                                    <option value="openai">OpenAI</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="tts-toggle" class="form-label">Enable TTS</label>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="tts-toggle" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-primary" id="generate-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polygon points="5 3 19 12 5 21 5 3" />
+                            </svg>
+                            Generate Video
+                        </button>
+                    </form>
+
+                    <div id="progress-section" class="progress-section hidden">
+                        <div class="progress-header">
+                            <h3 class="progress-title">Generating Your Video</h3>
+                            <span class="progress-percentage">0%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progress-fill"></div>
+                        </div>
+                        <div class="progress-steps">
+                            <div class="step" id="step-script">
+                                <div class="step-icon">1</div>
+                                <span class="step-label">Script Generation</span>
+                            </div>
+                            <div class="step" id="step-tts">
+                                <div class="step-icon">2</div>
+                                <span class="step-label">Audio Synthesis</span>
+                            </div>
+                            <div class="step" id="step-code">
+                                <div class="step-icon">3</div>
+                                <span class="step-label">Code Generation</span>
+                            </div>
+                            <div class="step" id="step-video">
+                                <div class="step-icon">4</div>
+                                <span class="step-label">Video Compilation</span>
+                            </div>
+                        </div>
+                        <div class="progress-log" id="progress-log"></div>
+                    </div>
+
+                    <div id="result-section" class="result-section hidden">
+                        <div class="result-header">
+                            <h3 class="result-title">Video Generated Successfully!</h3>
+                        </div>
+                        <video id="result-video" class="result-video" controls></video>
+                        <div class="result-actions">
+                            <a id="download-btn" class="btn-secondary" download>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                    <polyline points="7 10 12 15 17 10" />
+                                    <line x1="12" y1="15" x2="12" y2="3" />
+                                </svg>
+                                Download Video
+                            </a>
+                            <button class="btn-outline" onclick="location.reload()">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="23 4 23 10 17 10" />
+                                    <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10" />
+                                </svg>
+                                Generate Another
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <header>
+        <h1>Lecture Forge by Sourav</h1>
+        <a href="https://github.com/souravkr529/lectureforge" target="_blank">GitHub Repository</a>
+    </header>
+
+    <script src="/static/app.js"></script>
+</body>
+
+</html>
